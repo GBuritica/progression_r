@@ -1,0 +1,24 @@
+Package: progression
+Title: Prediction Algorithm Generalizing to Unobserved Data
+Version: 0.0.0.9000
+Authors@R: 
+    person("Gloria", "Buritica", , "gloria.buritica@agroparistech.fr", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-8527-1165"))
+Description: An algorithm featuring accurate non-parametric predictions.
+    Classical non-parametric methods predict well only on new data broadly
+    represented during training but don't generalize to previously
+    unobserved data. The 'progression' algorithm guarantees a satisfactory
+    generalization on underrepresented test data.
+License: MIT + file LICENSE
+Imports: 
+    data.table,
+    evd,
+    grf,
+    mev,
+    extRemes
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
