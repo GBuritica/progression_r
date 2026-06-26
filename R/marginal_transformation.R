@@ -16,7 +16,7 @@
 #' @examples
 #' set.seed(28)
 #' data <- rnorm(100)  # Generate some normal data
-#' functions <- prepare_semi_parametric_functions(data)
+#' functions <- prepare_semi_parametric_functions(data, method='proflik', fast=T)
 #' curve(functions$cdf(x), from = -4, to = 4, main = 'CDF')
 #' p <- functions$cdf(data)
 #' q <- functions$inverse_cdf(p)
@@ -35,7 +35,7 @@ prepare_semi_parametric_functions <-
     lower_threshold <-
       stats::quantile(data, p)          # compute lower quantile
     upper_threshold <- stats::quantile(data, 1 - p)
-
+    emp <- stats::ecdf(data)
     # Fit GPD to the tails
     upper_tail <- data[data > upper_threshold]
     lower_tail <- data[data < lower_threshold]
@@ -80,7 +80,7 @@ prepare_semi_parametric_functions <-
           return(est)
         } else {
           # Empirical CDF for the central part
-          return(stats::ecdf(data)(x))
+          return(emp(x))
         }
       }
     }else cdf_func <- function(x) cdf(x)
@@ -93,7 +93,7 @@ prepare_semi_parametric_functions <-
           q0   <-
             sapply(round(
               1 - round(round(q, 14)/ p,14) , 14) , function(k)
-              min(k, 0.9994))#
+                min(k, 0.9994))#
           res2 <-
             function(q0)
               lower_threshold - evd::qgpd(
@@ -285,7 +285,7 @@ prepare_semi_parametric_functions <-
 #' @examples
 #' set.seed(28)
 #' data <- rt(1000, df = 2)
-#' transformations <- prepare_laplace_transformations(data)
+#' transformations <- prepare_laplace_transformations(data, p = 0.05)
 #' laplace_values <- transformations$data_to_laplace(data)
 #' reconstructed_data <- transformations$laplace_to_data(laplace_values)
 #' plot(data, laplace_values, main = "Data vs. Laplace Transformation")
