@@ -35,7 +35,7 @@
 fit_additive <- function(X, Y,
                          nb.iter = 1,
                          method = 'llf_progression',
-                         q = 0.05,
+                         q = .1,
                          num.trees = 2000,
                          honesty = FALSE,
                          min.node.size = 25,
