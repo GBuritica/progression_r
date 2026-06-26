@@ -18,7 +18,7 @@
 #'
 #' # set.seed(28)
 #' n <- 1000
-#' p <- 2
+#' p <- 1
 #' X <- matrix(rnorm(n * p), n, p)
 #' reg_fun <- function(x) x^3/3
 #' Y <- reg_fun(X[, 1]) + rnorm(n)
@@ -99,7 +99,7 @@ predict.llf_progression <-
         result  <-
           object$trans_Y$laplace_to_data(sapply(1:nrow(newdatatrans), function(k)
             stats::optim(rep(0, (p + 1)), function(par)
-              fn(par, newdatatrans[k, ], weix[k, ]))$par[1]), upper = upper)
+              fn(par, newdatatrans[k, ], weix[k, ]), method = "L-BFGS-B" )$par[1]), upper = upper)
       }
       else{
         if (both.sided) {
@@ -118,7 +118,7 @@ predict.llf_progression <-
               init     <-
                 sapply(1:n, function(k)
                   stats::optim(rep(0, (p + 1)), function(par)
-                    fn(par, newdt[k, ], wei[k, ]))$par)
+                    fn(par, newdt[k, ], wei[k, ]), method = "L-BFGS-B" )$par)
               ##
               ind1    <- which(newdt[, 1] > 1 | newdt[, 1] < -1)
               ind2    <- which(!(1:n) %in% ind1)
@@ -131,11 +131,11 @@ predict.llf_progression <-
               est1    <-
                 sapply(ind1, function(k)
                   stats::optim(init[, k], function(par)
-                    fn1(par, newdt[k, ], wei[k, ]))$par)
+                    fn1(par, newdt[k, ], wei[k, ]), method = "L-BFGS-B")$par)
               est2    <-
                 sapply(ind2, function(k)
                   stats::optim(init[, k], function(par)
-                    fn2(par, newdt[k, ], wei[k, ]))$par)
+                    fn2(par, newdt[k, ], wei[k, ]), method = "L-BFGS-B")$par)
 
               if (length(ind1) > 0)
                 result[ind1]  <-
@@ -161,7 +161,7 @@ predict.llf_progression <-
             ## upper
             Y_train_LP <- as.vector(object$Y_train_LP$upper)
             X_train_LP <- as.matrix(object$X_train_LP$upper)
-            wei   <- weix$upper
+            wei   <- as.matrix(weix$upper)
             newdt <- as.matrix(newdatatrans[upper$upper,])
             if (nrow(newdt) > 0) {
               upp   <-
@@ -185,7 +185,7 @@ predict.llf_progression <-
             #abline(0,1)
             Y_train_LP <- as.vector(object$Y_train_LP$lower)
             X_train_LP <- as.matrix(object$X_train_LP$lower)
-            wei   <- weix$lower
+            wei   <- as.matrix(weix$lower)
             newdt <- as.matrix(newdatatrans[upper$lower,])
             if (nrow(newdt) > 0) {
               upp   <-
@@ -204,7 +204,7 @@ predict.llf_progression <-
             ## mid
             Y_train_LP <- as.vector(object$Y_train_LP$mid)
             X_train_LP <- as.matrix(object$X_train_LP$mid)
-            wei   <- weix$mid
+            wei   <- as.matrix(weix$mid)
             newdt <- as.matrix(newdatatrans[upper$mid,])
             if (nrow(newdt) > 0) {
               upp   <-
@@ -224,10 +224,10 @@ predict.llf_progression <-
 
           }else{
             compute_results_a <- function(wei,
-                                        newdt,
-                                        Y_train_LP,
-                                        X_train_LP,
-                                        upp) {
+                                          newdt,
+                                          Y_train_LP,
+                                          X_train_LP,
+                                          upp) {
               n        <- nrow(newdt)
               result   <- 1:n
               fn       <-
@@ -238,7 +238,7 @@ predict.llf_progression <-
               init     <-
                 sapply(1:n, function(k)
                   stats::optim(rep(0, (p + 1)), function(par)
-                    fn(par, newdt[k, ], wei[k, ]))$par)
+                    fn(par, newdt[k, ], wei[k, ]), method = "L-BFGS-B")$par)
               ##
               ind1    <- which(newdt[, 1] > 1 | newdt[, 1] < -1)
               ind2    <- which(!(1:n) %in% ind1)
@@ -255,11 +255,11 @@ predict.llf_progression <-
               est1    <-
                 sapply(ind1, function(k)
                   stats::optim(init[, k], function(par)
-                    fn1(par, newdt[k, ], wei[k, ]))$par)
+                    fn1(par, newdt[k, ], wei[k, ]), method = "L-BFGS-B")$par)
               est2    <-
                 sapply(ind2, function(k)
                   stats::optim(init[, k], function(par)
-                    fn2(par, newdt[k, ], wei[k, ]))$par)
+                    fn2(par, newdt[k, ], wei[k, ]), method = "L-BFGS-B")$par)
 
               if (length(ind1) > 0)
                 result[ind1]  <-
@@ -285,7 +285,7 @@ predict.llf_progression <-
             ## upper
             Y_train_LP <- as.vector(object$Y_train_LP$upper)
             X_train_LP <- as.matrix(object$X_train_LP$upper)
-            wei   <- weix$upper
+            wei   <- as.matrix(weix$upper)
             newdt <- as.matrix(newdatatrans[upper$upper,])
             if (nrow(newdt) > 0) {
               upp   <-
@@ -309,7 +309,7 @@ predict.llf_progression <-
             #plot(X_train_LP,Y_train_LP)
             Y_train_LP <- as.vector(object$Y_train_LP$lower)
             X_train_LP <- as.matrix(object$X_train_LP$lower)
-            wei   <- weix$lower
+            wei   <- as.matrix(weix$lower)
             newdt <- as.matrix(newdatatrans[upper$lower,])
             if (nrow(newdt) > 0) {
               upp   <-
@@ -329,7 +329,7 @@ predict.llf_progression <-
             ## mid
             Y_train_LP <- as.vector(object$Y_train_LP$mid)
             X_train_LP <- as.matrix(object$X_train_LP$mid)
-            wei   <- weix$mid
+            wei   <- as.matrix(weix$mid)
             newdt <- as.matrix(newdatatrans[upper$mid,])
             if (nrow(newdt) > 0) {
               upp   <-
@@ -359,7 +359,7 @@ predict.llf_progression <-
           init     <-
             sapply(1:n, function(k)
               stats::optim(rep(0, (p + 1)), function(par)
-                fn(par, newdatatrans[k, ], weix[k, ]))$par)
+                fn(par, newdatatrans[k, ], weix[k, ]), method = "L-BFGS-B")$par)
 
           ## fast
           ind1    <-
@@ -378,11 +378,11 @@ predict.llf_progression <-
           est1    <-
             sapply(ind1, function(k)
               stats::optim(init[, k], function(par)
-                fn1(par, newdatatrans[k, ], weix[k, ]))$par)
+                fn1(par, newdatatrans[k, ], weix[k, ]), method = "L-BFGS-B")$par)
           est2    <-
             sapply(ind2, function(k)
               stats::optim(init[, k], function(par)
-                fn2(par, newdatatrans[k, ], weix[k, ]))$par)
+                fn2(par, newdatatrans[k, ], weix[k, ]), method = "L-BFGS-B")$par)
           result     <- 1:n
 
           if (length(ind1) > 0)
@@ -397,10 +397,10 @@ predict.llf_progression <-
     } else if (pred.median == FALSE) {
       if (both.sided) {
         compute_results_quantile <- function(wei,
-                                    newdt,
-                                    Y_train_LP,
-                                    X_train_LP,
-                                    upp) {
+                                             newdt,
+                                             Y_train_LP,
+                                             X_train_LP,
+                                             upp) {
           n        <- nrow(newdt)
           result   <- 1:n
 
@@ -419,7 +419,7 @@ predict.llf_progression <-
           init     <-
             sapply(1:n, function(k)
               stats::optim(rep(0, (p + 1)), function(par)
-                fn(par, newdt[k, ], wei[k, ]))$par)
+                fn(par, newdt[k, ], wei[k, ]), method = "L-BFGS-B")$par)
           result   <- object$trans_Y$laplace_to_data(init[1, ], upp)
           return(unlist(result))
         }
@@ -429,7 +429,7 @@ predict.llf_progression <-
         ## upper
         Y_train_LP <- as.vector(object$Y_train_LP$upper)
         X_train_LP <- as.matrix(object$X_train_LP$upper)
-        wei   <- weix$upper
+        wei   <- as.matrix(weix$upper)
         newdt <- as.matrix(newdatatrans[upper$upper,])
         upp   <-
           list(
@@ -445,7 +445,7 @@ predict.llf_progression <-
         #plot(X_train_LP,Y_train_LP)
         Y_train_LP <- as.vector(object$Y_train_LP$lower)
         X_train_LP <- as.matrix(object$X_train_LP$lower)
-        wei   <- weix$lower
+        wei   <- as.matrix(weix$lower)
         newdt <- as.matrix(newdatatrans[upper$lower,])
         upp   <-
           list(
@@ -459,7 +459,7 @@ predict.llf_progression <-
         ## mid
         Y_train_LP <- as.vector(object$Y_train_LP$mid)
         X_train_LP <- as.matrix(object$X_train_LP$mid)
-        wei   <- weix$mid
+        wei   <- as.matrix(weix$mid)
         newdt <- as.matrix(newdatatrans[upper$mid,])
         upp   <-
           list(
@@ -552,7 +552,7 @@ compute_ci <- function(p){
 #' @return Double with the empirical quantile loss
 #'
 #' @examples
-#' #quantile_loss(y=2,y_pred=2,.5)
+#' quantile_loss(y=2,y=2,.5)
 quantile_loss <- function(y, y_pred, tau = .5) {
   error <- y - y_pred
   return(mean((tau - (error < 0)) * error))
