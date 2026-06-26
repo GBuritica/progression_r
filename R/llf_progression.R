@@ -17,7 +17,7 @@
 #' @param honesty A boolean of whether to use honest splitting or not. Default is FALSE.
 #' @param both.sided A boolean. Default value is `FALSE`, and currently this feature is only supported for a univariate predictor \eqn{X}. If `TRUE` then the marginal standarizations of \eqn{X} and \eqn{Y} are computed separately for upper data: \eqn{\{(X,Y) | X > median(X)\}} and lower data: \eqn{\{(X,Y) | X \leq median(X)\}}. The feature `both.sided = TRUE` is convenient when the upper and lower tails of \eqn{Y | X > median(X) } and \eqn{Y | X \leq median(X) } are not equivalent.
 #' @param min.node.size An integer with the target for the minimum number of observation in each tree leaf. Default is 5.
-#' @param fast A boolean that when is set to false returns a conservative extrapolation. It computes a conservative response based on profile likelihood confidence intervals for the generalized Pareto distribution fit
+#' @param fast A boolean that when is set to false returns a conservative extrapolation. It computes a conservative response based on profile likelihood confidence intervals for the generalized Pareto distribution fit.
 #' @param FX A function with the cumulative distribution function (CDF) of the predictor X.
 #' @param FY A function with the CDF of the response Y.
 #' @param QX A function with the quantile function of the predictor X.
@@ -40,7 +40,7 @@ llf_progression <- function(X,
                             honesty = FALSE,
                             both.sided = TRUE,
                             min.node.size = 25,
-                            fast = FALSE,
+                            fast = TRUE,
                             FX = NULL,
                             FY = NULL,
                             QX = NULL,
@@ -131,5 +131,7 @@ llf_progression <- function(X,
   return(model)
 
 }
+
+
 
 
