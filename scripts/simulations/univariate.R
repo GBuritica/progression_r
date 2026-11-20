@@ -29,20 +29,20 @@ eps_dist <-  function(n) .5*rnorm(n)
 
 # Setting 3
 set.seed(28)
-df_X <- 3
+df_X <- 4
 k <- 1
-reg_fun <- function(x) x^2/8
+reg_fun <- function(x) x^2/4
 train_dist <- function(n) k*rt(n, df = df_X)
 eps_dist <-  function(n) .1*rnorm(n)
 
 
-engress = T # Set engression to false to for a faster implementation
+engress = F # Set engression to false to for a faster implementation
 
 
-n_rep <- 5
+n_rep <- 50
 n <- 1000
 n_test <- 50
-qu <- k*qt(1 - 1 / (4 * n), df = df_X) # max(abs(X_train)) * 1.3 #60
+qu <- k*qt(1 - 1 / (10 * n), df = df_X) # max(abs(X_train)) * 1.3 #60
 X_test <- seq(-qu, qu, length = n_test)
 Y_true <- reg_fun(X_test)
 
@@ -132,7 +132,7 @@ for (r in 1:n_rep) {
 #save(res_sim, file = 'cubic.Rdata' )
 #load("figures/res_sim_sqrt.Rdata")
 library(matrixStats)
-alpha <- .2
+alpha <- .5
 #pdf("sqrt_all.pdf", width = 10, height = 3)
 if(engress == F) par(mfrow=c(1,4))
 if(engress == T) par(mfrow=c(1,5))
@@ -167,8 +167,6 @@ if(engress == T){
 
 }
 
-#dev.off()
-
 method_idx <- 4
 colors_with_alpha <- rgb(0, 0, 0, alpha = alpha)
 matplot(X_test, t(rbind(Y_true, res_sim[method_idx, , ])), type = "l", lty = 1, col = colors_with_alpha, lwd = 1, ylim=1*range(Y_true), main="cautiousProgression", ylab = '', xlab = 'x test')
@@ -176,10 +174,12 @@ points(X_train, Y_train, col = colors_with_alpha, cex = 0.2)
 lines(X_test, Y_true, col = "blue", lwd = 2)
 lines(X_test, rowMeans(t(rbind(Y_true, res_sim[method_idx, , ]))), col="orange", lwd=2, ylab = '', xlab = 'x test')
 
+
+#dev.off()
+
+
 #sum(apply(res_sim[2, , ],  1, function(x)  mean(abs( x- Y_true)) ))
 #sum(apply(res_sim[4, , ],  1, function(x)  mean(abs( x- Y_true)) ))
-
-
 
 
 
