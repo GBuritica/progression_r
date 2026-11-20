@@ -1,0 +1,403 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Alves, Gomes, de~Haan, and Neves}{Alves
+  et~al.}{2007}]{fraga:gomes:dehaan:neves:2007}
+Alves, M. I.~F., M.~I. Gomes, L.~de~Haan, and C.~Neves (2007).
+\newblock A note on second order conditions in extreme value theory: linking
+  general and heavy tail conditions.
+\newblock {\em REVSTAT-Statistical Journal\/}~{\em 5\/}(3), 285--304.
+
+\bibitem[\protect\citeauthoryear{Asmussen, Hashorva, Laub, and Taimre}{Asmussen
+  et~al.}{2017}]{asmussen:hashorva:laub:taimre:2017}
+Asmussen, S., E.~Hashorva, P.~J. Laub, and T.~Taimre (2017).
+\newblock Tail asymptotics of light-tailed weibull-like sums.
+\newblock {\em Probability and Mathematical Statistics\/}~{\em 37}, 235--256.
+
+\bibitem[\protect\citeauthoryear{Athey, Tibshirani, and Wager}{Athey
+  et~al.}{2019}]{athey:tibshirani:wager:2019}
+Athey, S., J.~Tibshirani, and S.~Wager (2019).
+\newblock Generalized random forests.
+\newblock {\em Ann. Statist.\/}~{\em 47}, 1148--1178.
+
+\bibitem[\protect\citeauthoryear{Balkema and de~Haan}{Balkema and
+  de~Haan}{1974}]{balkema:dehaan:1974}
+Balkema, A.~A. and L.~de~Haan (1974).
+\newblock Residual life time at great age.
+\newblock {\em The Annals of Probability\/}~{\em 2}, 792--804.
+
+\bibitem[\protect\citeauthoryear{Balkema, Kl{\"u}ppelberg, and Resnick}{Balkema
+  et~al.}{1993}]{bal1993}
+Balkema, A.~A., C.~Kl{\"u}ppelberg, and S.~I. Resnick (1993).
+\newblock Densities with {G}aussian tails.
+\newblock {\em Proc. Lond. Math. Soc.\/}~{\em 66}, 568--588.
+
+\bibitem[\protect\citeauthoryear{Beirlant, Goegebeur, Teugels, Segers, de~Waal,
+  and C.}{Beirlant
+  et~al.}{2004}]{beirlant:goegebeur:teugels:segers:dewaal:ferro:2004}
+Beirlant, J., Y.~Goegebeur, J.~Teugels, J.~Segers, D.~de~Waal, and F.~C.
+  (2004).
+\newblock {\em Statistics of Extremes: Theory and Applications}.
+\newblock West Sussex: John Wiley \& Sons.
+
+\bibitem[\protect\citeauthoryear{Belzile, Dutang, Northrop, and Opitz}{Belzile
+  et~al.}{2023}]{bel2023}
+Belzile, L.~R., C.~Dutang, P.~J. Northrop, and T.~Opitz (2023).
+\newblock A modeler's guide to extreme value software.
+\newblock {\em Extremes\/}~{\em 26\/}(4), 595--638.
+
+\bibitem[\protect\citeauthoryear{Boulaguiem, Zscheischler, Vignotto, van~der
+  Wiel, and Engelke}{Boulaguiem et~al.}{2022}]{bou2022}
+Boulaguiem, Y., J.~Zscheischler, E.~Vignotto, K.~van~der Wiel, and S.~Engelke
+  (2022).
+\newblock Modeling and simulating spatial extremes by combining extreme value
+  theory with generative adversarial networks.
+\newblock {\em Environmental Data Science\/}~{\em 1}, e5.
+
+\bibitem[\protect\citeauthoryear{Box and Cox}{Box and Cox}{1964}]{box1964}
+Box, G. E.~P. and D.~R. Cox (1964).
+\newblock An analysis of transformations.
+\newblock {\em Journal of the Royal Statistical Society. Series B
+  (Methodological)\/}~{\em 26\/}(2), 211--252.
+
+\bibitem[\protect\citeauthoryear{Breiman}{Breiman}{2001}]{breiman:2001}
+Breiman, L. (2001).
+\newblock Random forests.
+\newblock {\em Machine Learning\/}~{\em 45}, 5--32.
+
+\bibitem[\protect\citeauthoryear{B{\"u}hlmann}{B{\"u}hlmann}{2020}]{buhlmann:2020}
+B{\"u}hlmann, P. (2020).
+\newblock Invariance, causality and robustness.
+\newblock {\em Statistical Science\/}~{\em 35}, 404--426.
+
+\bibitem[\protect\citeauthoryear{Caeiro and Gomes}{Caeiro and
+  Gomes}{2016}]{cae2016}
+Caeiro, F. and M.~I. Gomes (2016).
+\newblock Threshold selection in extreme value analysis.
+\newblock In {\em Extreme value modeling and risk analysis}, pp.\  69--86. CRC
+  Press, Boca Raton, FL.
+
+\bibitem[\protect\citeauthoryear{Chernozhukov}{Chernozhukov}{2005}]{che2005}
+Chernozhukov, V. (2005).
+\newblock {Extremal quantile regression}.
+\newblock {\em The Annals of Statistics\/}~{\em 33\/}(2), 806 -- 839.
+
+\bibitem[\protect\citeauthoryear{Chipman, George, and McCulloch}{Chipman
+  et~al.}{2010}]{chi2010}
+Chipman, H.~A., E.~I. George, and R.~E. McCulloch (2010).
+\newblock B{ART}: {B}ayesian additive regression trees.
+\newblock {\em Ann. Appl. Stat.\/}~{\em 4\/}(1), 266--298.
+
+\bibitem[\protect\citeauthoryear{Christiansen, Pfister, Jakobsen, Gnecco, and
+  Peters}{Christiansen
+  et~al.}{2022}]{christiansen:pfister:jakobsen:gnecco:peters:2021}
+Christiansen, R., N.~Pfister, M.~E. Jakobsen, N.~Gnecco, and J.~Peters (2022).
+\newblock A causal framework for distribution generalization.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine
+  Intelligence\/}~{\em 44}, 6614--6630.
+
+\bibitem[\protect\citeauthoryear{Cline}{Cline}{1986}]{cline:1986}
+Cline, D.~B. (1986).
+\newblock Convolution tails, product tails and domain of attraction.
+\newblock {\em Probability Theory and Related Fields\/}~{\em 72}, 529--557.
+
+\bibitem[\protect\citeauthoryear{Coles}{Coles}{2001}]{coles:2001}
+Coles, S. (2001).
+\newblock {\em An Introduction to Statistical Modeling of Extreme Values}.
+\newblock London: Springer Series in Statistics.
+
+\bibitem[\protect\citeauthoryear{Cortes, Mansour, and Mehryar}{Cortes
+  et~al.}{2010}]{cortes:mansour:mohri:2010}
+Cortes, C., Y.~Mansour, and M.~Mehryar (2010).
+\newblock Learning bounds for importance weighting.
+\newblock In {\em Advances in Neural Information Processing Systems},
+  Volume~23, pp.\  442--450.
+
+\bibitem[\protect\citeauthoryear{de~Haan and Ferreira}{de~Haan and
+  Ferreira}{2006}]{dehaan:ferreira:2006}
+de~Haan, L. and A.~Ferreira (2006).
+\newblock {\em Extreme Value Theory: and introduction}.
+\newblock New York: Springer.
+
+\bibitem[\protect\citeauthoryear{Devroye, Gy\"orfi, and Lugosi}{Devroye
+  et~al.}{1996}]{dev1996}
+Devroye, L., L.~Gy\"orfi, and G.~Lugosi (1996).
+\newblock {\em A probabilistic theory of pattern recognition}, Volume~31 of
+  {\em Applications of Mathematics (New York)}.
+\newblock Springer-Verlag, New York.
+
+\bibitem[\protect\citeauthoryear{Dong and Ma}{Dong and Ma}{2023}]{dong:ma:2023}
+Dong, K. and T.~Ma (2023).
+\newblock First steps toward understanding the extrapolation of nonlinear
+  models to unseen domains.
+\newblock In {\em The Eleventh International Conference on Learning
+  Representations}.
+
+\bibitem[\protect\citeauthoryear{Embrechts, Kluppelberg, and Mikosch}{Embrechts
+  et~al.}{2013}]{embrechts:kluppelberg:mikosch:2013}
+Embrechts, P., C.~Kluppelberg, and T.~Mikosch (2013).
+\newblock {\em Modelling extremal events: for insurance and finance},
+  Volume~13.
+\newblock Zurich: Springer.
+
+\bibitem[\protect\citeauthoryear{Engelke, Opitz, and Wadsworth}{Engelke
+  et~al.}{2019}]{EOW2019}
+Engelke, S., T.~Opitz, and J.~L. Wadsworth (2019).
+\newblock Extremal dependence of random scale constructions.
+\newblock {\em Extremes\/}~{\em 22\/}(4), 623--666.
+
+\bibitem[\protect\citeauthoryear{Freschlin, Fahlberg, Heinzelman,
+  et~al.}{Freschlin et~al.}{2024}]{fre2024}
+Freschlin, C.~R., S.~A. Fahlberg, P.~Heinzelman, et~al. (2024).
+\newblock Neural network extrapolation to distant regions of the protein
+  fitness landscape.
+\newblock {\em Nature Communications\/}~{\em 15}, 6405.
+
+\bibitem[\protect\citeauthoryear{Friedberg, Tibshirani, Athey, and
+  Wager}{Friedberg et~al.}{2021}]{friedberg:tibshirani:wager:2021}
+Friedberg, R., J.~Tibshirani, S.~Athey, and S.~Wager (2021).
+\newblock Local linear forest.
+\newblock {\em Journal of computational and graphical statistics\/}~{\em
+  30\/}(2), 503--517.
+
+\bibitem[\protect\citeauthoryear{Friedman}{Friedman}{1991}]{fri1991}
+Friedman, J.~H. (1991).
+\newblock Multivariate adaptive regression splines.
+\newblock {\em Ann. Statist.\/}~{\em 19\/}(1), 1--141.
+
+\bibitem[\protect\citeauthoryear{Galton}{Galton}{1886}]{gal1886}
+Galton, F. (1886).
+\newblock Regression towards mediocrity in hereditary stature.
+\newblock {\em The Journal of the Anthropological Institute of Great Britain
+  and Ireland\/}~{\em 15}, 246--263.
+
+\bibitem[\protect\citeauthoryear{Ganin, Ustinova, Ajakan, Germain, Larochelle,
+  Laviolette, March, and Lempitsky}{Ganin et~al.}{2016}]{gan2016}
+Ganin, Y., E.~Ustinova, H.~Ajakan, P.~Germain, H.~Larochelle, F.~Laviolette,
+  M.~March, and V.~Lempitsky (2016).
+\newblock Domain-adversarial training of neural networks.
+\newblock {\em Journal of Machine Learning Research\/}~{\em 17\/}(59), 1--35.
+
+\bibitem[\protect\citeauthoryear{Geluk, de~Haan, Resnick, and
+  St\u{a}ric\u{a}}{Geluk et~al.}{1997}]{geluk:dehaan:resnick:starica}
+Geluk, J., L.~de~Haan, S.~Resnick, and C.~St\u{a}ric\u{a} (1997).
+\newblock Second-order regular variation, convolution and the central limit
+  theorem.
+\newblock {\em Stochastic Process. Appl.\/}~{\em 69\/}(2), 139--159.
+
+\bibitem[\protect\citeauthoryear{Geluk, Peng, and de~Vries}{Geluk
+  et~al.}{2000}]{geluk:peng:vries:casper:2000}
+Geluk, J.~L., L.~Peng, and C.~G. de~Vries (2000).
+\newblock Convolutions of heavy-tailed random variables and applications to
+  portfolio diversification and {${\rm MA}(1)$} time series.
+\newblock {\em Adv. in Appl. Probab.\/}~{\em 32\/}(4), 1011--1026.
+
+\bibitem[\protect\citeauthoryear{Gnecco, Peters, Engelke, and Pfister}{Gnecco
+  et~al.}{2023}]{gnecco:peters:engelke:pfister:2023}
+Gnecco, N., J.~Peters, S.~Engelke, and N.~Pfister (2023).
+\newblock Boosted control function.
+\newblock {\em arXiv 2310.05805\/}.
+
+\bibitem[\protect\citeauthoryear{Gnecco, Terefe, and Engelke}{Gnecco
+  et~al.}{2024}]{gne2024}
+Gnecco, N., E.~M. Terefe, and S.~Engelke (2024).
+\newblock Extremal random forests.
+\newblock {\em Journal of the American Statistical Association\/}.
+\newblock To appear.
+
+\bibitem[\protect\citeauthoryear{Haan and Ferreira}{Haan and
+  Ferreira}{2006}]{haan:ferreira:2006}
+Haan, d.~L. and A.~Ferreira (2006).
+\newblock {\em Extreme Value Theory: an introduction}.
+\newblock New York: Springer.
+
+\bibitem[\protect\citeauthoryear{Hastie and Tibshirani}{Hastie and
+  Tibshirani}{1987}]{has1987}
+Hastie, T. and R.~Tibshirani (1987).
+\newblock Generalized additive models: Some applications.
+\newblock {\em Journal of the American Statistical Association\/}~{\em
+  82\/}(398), 371--386.
+
+\bibitem[\protect\citeauthoryear{Hastie, Tibshirani, and Friedman}{Hastie
+  et~al.}{2009}]{has2009}
+Hastie, T., R.~Tibshirani, and J.~Friedman (2009).
+\newblock {\em The elements of statistical learning\/} (Second ed.).
+\newblock Springer Series in Statistics. Springer, New York.
+
+\bibitem[\protect\citeauthoryear{Heffernan and Tawn}{Heffernan and
+  Tawn}{2004}]{heffernan:tawn:2004}
+Heffernan, J.~E. and J.~A. Tawn (2004).
+\newblock A conditional approach for multivariate extreme values (with
+  discussion).
+\newblock {\em Journal of the Royal Statistical Society: Series B (Statistical
+  Methodology)\/}~{\em 66}, 497--546.
+
+\bibitem[\protect\citeauthoryear{Heinrich-Mertsching, Wahl, Ordoñez, Stien,
+  Elvsborg, Haug, and Thorarinsdottir}{Heinrich-Mertsching
+  et~al.}{2023}]{hei2023}
+Heinrich-Mertsching, C., J.~C. Wahl, A.~Ordoñez, M.~Stien, J.~Elvsborg,
+  O.~Haug, and T.~L. Thorarinsdottir (2023).
+\newblock {Assessing present and future risk of water damage using building
+  attributes, meteorology, and topography}.
+\newblock {\em Journal of the Royal Statistical Society Series C: Applied
+  Statistics\/}~{\em 72\/}(4), 809--828.
+
+\bibitem[\protect\citeauthoryear{Huet, Clémençon, and Sabourin}{Huet
+  et~al.}{2024}]{huet2024regressionextremeregions}
+Huet, N., S.~Clémençon, and A.~Sabourin (2024).
+\newblock On regression in extreme regions.
+\newblock https://arxiv.org/abs/2303.03084.
+
+\bibitem[\protect\citeauthoryear{Jalalzai, Cl\'emen{\c c}on, and
+  Sabourin}{Jalalzai et~al.}{2018}]{jalalzai:clemencon:sabourin:2018}
+Jalalzai, H., S.~Cl\'emen{\c c}on, and A.~Sabourin (2018).
+\newblock On binary classification in extreme regions.
+\newblock {\em Advances in Neural Information Processing Systems 31\/}~{\em
+  31}, 3092--3100.
+
+\bibitem[\protect\citeauthoryear{Koh}{Koh}{2023}]{Kohfireboosting}
+Koh, J. (2023).
+\newblock Gradient boosting with extreme-value theory for wildfire prediction.
+\newblock {\em Extremes\/}~{\em 26}, 273--299.
+
+\bibitem[\protect\citeauthoryear{Kuhn, Esfahani, Nguyen, and
+  Shafieezadeh-Abadeh}{Kuhn et~al.}{2019}]{kuh2019}
+Kuhn, D., P.~M. Esfahani, V.~A. Nguyen, and S.~Shafieezadeh-Abadeh (2019).
+\newblock {\em Wasserstein Distributionally Robust Optimization: Theory and
+  Applications in Machine Learning}, Chapter~6, pp.\  130--166.
+
+\bibitem[\protect\citeauthoryear{Lam, Sanchez-Gonzalez, Willson, Wirnsberger,
+  Fortunato, Alet, Ravuri, Ewalds, Eaton-Rosen, Hu, Merose, Hoyer, Holland,
+  Vinyals, Stott, Pritzel, Mohamed, and Battaglia}{Lam
+  et~al.}{2023}]{graphcast}
+Lam, R., A.~Sanchez-Gonzalez, M.~Willson, P.~Wirnsberger, M.~Fortunato,
+  F.~Alet, S.~Ravuri, T.~Ewalds, Z.~Eaton-Rosen, W.~Hu, A.~Merose, S.~Hoyer,
+  G.~Holland, O.~Vinyals, J.~Stott, A.~Pritzel, S.~Mohamed, and P.~Battaglia
+  (2023).
+\newblock Learning skillful medium-range global weather forecasting.
+\newblock {\em Science\/}~{\em 382\/}(6677), 1416--1421.
+
+\bibitem[\protect\citeauthoryear{Ma, Pathak, and Wainwright}{Ma
+  et~al.}{2023}]{ma:pathak:wainwright:2023}
+Ma, C., R.~Pathak, and M.~J. Wainwright (2023).
+\newblock Optimally tackling covariate shift in rkhs-based nonparametric
+  regression.
+\newblock {\em Ann. Statist.\/}~{\em 51}, 738--761.
+
+\bibitem[\protect\citeauthoryear{Meinshausen}{Meinshausen}{2007}]{meinshausen:2006}
+Meinshausen, N. (2007).
+\newblock Quantile regression forests.
+\newblock {\em JMLR\/}~{\em 7}, 983--999.
+
+\bibitem[\protect\citeauthoryear{Mikosch}{Mikosch}{2014}]{mikosch2014modeling}
+Mikosch, T. (2014).
+\newblock Modeling heavy-tailed time series.
+
+\bibitem[\protect\citeauthoryear{Namkoong and Duchi}{Namkoong and
+  Duchi}{2016}]{NIPS2016_4588e674}
+Namkoong, H. and J.~C. Duchi (2016).
+\newblock Stochastic gradient methods for distributionally robust optimization
+  with f-divergences.
+\newblock In D.~Lee, M.~Sugiyama, U.~Luxburg, I.~Guyon, and R.~Garnett (Eds.),
+  {\em Advances in Neural Information Processing Systems}, Volume~29. Curran
+  Associates, Inc.
+
+\bibitem[\protect\citeauthoryear{Pasche and Engelke}{Pasche and
+  Engelke}{2024}]{Pasche2025}
+Pasche, O.~C. and S.~Engelke (2024).
+\newblock Neural networks for extreme quantile regression with an application
+  to forecasting of flood risk.
+\newblock {\em Ann. Appl. Stat.\/}.
+\newblock To appear.
+
+\bibitem[\protect\citeauthoryear{Pasche, Wider, Zhang, Zscheischler, and
+  Engelke}{Pasche et~al.}{2024}]{pasche2024}
+Pasche, O.~C., J.~Wider, Z.~Zhang, J.~Zscheischler, and S.~Engelke (2024).
+\newblock Validating deep-learning weather forecast models on recent
+  high-impact extreme events.
+\newblock https://arxiv.org/abs/2404.17652.
+
+\bibitem[\protect\citeauthoryear{Pfister and B{\"u}hlmann}{Pfister and
+  B{\"u}hlmann}{2024}]{pfister:buhlman:2023}
+Pfister, N. and P.~B{\"u}hlmann (2024).
+\newblock Extrapolation-aware nonparametric statistical inference.
+\newblock {\em arXiv:2402.09758\/}.
+
+\bibitem[\protect\citeauthoryear{Pickands}{Pickands}{1975}]{pickands:1975}
+Pickands, J. (1975).
+\newblock Statistical inference using extreme order statistics.
+\newblock {\em The Annals of Statistics\/}~{\em 3}, 119--131.
+
+\bibitem[\protect\citeauthoryear{Pimont, Fargeon, Opitz, Ruffault, Barbero,
+  Martin-StPaul, Rigolot, RiviÉre, and Dupuy}{Pimont et~al.}{2021}]{pim2021}
+Pimont, F., H.~Fargeon, T.~Opitz, J.~Ruffault, R.~Barbero, N.~Martin-StPaul,
+  E.~Rigolot, M.~RiviÉre, and J.-L. Dupuy (2021).
+\newblock Prediction of regional wildfire activity in the probabilistic
+  bayesian framework of firelihood.
+\newblock {\em Ecological Applications\/}~{\em 31\/}(5), e02316.
+
+\bibitem[\protect\citeauthoryear{Quinonero-Candela, Sugiyama, Schwaighofer, and
+  Lawrence}{Quinonero-Candela
+  et~al.}{2022}]{quinonero:sugiyama:schwaighofer:lawrence:2022}
+Quinonero-Candela, J., M.~Sugiyama, A.~Schwaighofer, and N.~D. Lawrence (2022).
+\newblock {\em Dataset shift in machine learning}.
+\newblock London: MIT Press.
+
+\bibitem[\protect\citeauthoryear{Resnick}{Resnick}{2007}]{resnick:2007}
+Resnick, S.~I. (2007).
+\newblock {\em Heavy-tail Phenomena: Probabilistic and Statistical Modeling}.
+\newblock New York: Springer.
+
+\bibitem[\protect\citeauthoryear{R{\"o}thenh{\"a}usler, Meinshausen, and
+  P.~B{\"u}hlmann}{R{\"o}thenh{\"a}usler
+  et~al.}{2021}]{rothensausler:meinshausen:buhlmann:peters:2021}
+R{\"o}thenh{\"a}usler, D., N.~Meinshausen, and J.~P. P.~B{\"u}hlmann (2021).
+\newblock Anchor regression: Heterogeneous data meet causality.
+\newblock {\em Journal of Royal Statistical Society. Series B.\/}~{\em 83},
+  215--246.
+
+\bibitem[\protect\citeauthoryear{Shen and Meinshausen}{Shen and
+  Meinshausen}{2023}]{shen:meinshausen:2023}
+Shen, X. and N.~Meinshausen (2023).
+\newblock Engression: Extrapolation for nonlinear regression?
+\newblock {\em arXiv:2307.00835\/}.
+
+\bibitem[\protect\citeauthoryear{Shimodaira}{Shimodaira}{2000}]{shimodaira:2000}
+Shimodaira, H. (2000).
+\newblock Improving predictive inference under covariate shift by weighting the
+  log-likelihood function.
+\newblock {\em Journal of Statistical Planning and Inference\/}~{\em 90},
+  227--244.
+
+\bibitem[\protect\citeauthoryear{Sugiyama, Krauledat, and
+  M{{\"u}}ller}{Sugiyama et~al.}{2007}]{sugiyama:krauledat:muller:2007}
+Sugiyama, M., M.~Krauledat, and K.-R. M{{\"u}}ller (2007).
+\newblock Covariate shift adaptation by importance weighted cross validation.
+\newblock {\em Journal of Machine Learning Research\/}~{\em 8\/}(35),
+  985--1005.
+
+\bibitem[\protect\citeauthoryear{Velthoen, Dombry, Cai, and Engelke}{Velthoen
+  et~al.}{2023}]{gbex}
+Velthoen, J., C.~Dombry, J.-J. Cai, and S.~Engelke (2023).
+\newblock {Gradient boosting for extreme quantile regression}.
+\newblock {\em Extremes\/}~{\em 26}, 639--667.
+
+\bibitem[\protect\citeauthoryear{Vignotto and Engelke}{Vignotto and
+  Engelke}{2020}]{vig2020}
+Vignotto, E. and S.~Engelke (2020).
+\newblock Extreme value theory for anomaly detection {---} the gpd classifier.
+\newblock {\em Extremes\/}~{\em 23}, 501--520.
+
+\bibitem[\protect\citeauthoryear{Xu, Zhang, Li, Du, Kawarabayashi, and
+  Jegelka}{Xu et~al.}{2021}]{xu2021how}
+Xu, K., M.~Zhang, J.~Li, S.~S. Du, K.-I. Kawarabayashi, and S.~Jegelka (2021).
+\newblock How neural networks extrapolate: From feedforward to graph neural
+  networks.
+\newblock In {\em International Conference on Learning Representations}.
+
+\bibitem[\protect\citeauthoryear{Youngman}{Youngman}{2019}]{ExGAM2}
+Youngman, B.~D. (2019).
+\newblock {Generalized Additive Models for Exceedances of High Thresholds With
+  an Application to Return Level Estimation for U.S. Wind Gusts}.
+\newblock {\em {J. Am. Stat. Assoc.}\/}~{\em 114\/}(528), 1865--1879.
+
+\end{thebibliography}

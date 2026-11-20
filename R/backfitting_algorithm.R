@@ -26,16 +26,16 @@
 #' set.seed(28)
 #' n <- 500
 #' reg_fun  <- vector(mode = 'list', length = 2)
-#' reg_fun[[1]] <- function(x) (x^3)/3
+#' reg_fun[[1]] <- function(x) (x^2)/3
 #' reg_fun[[2]] <- function(x) x
 #' X <- matrix(rnorm(n * 2 ), n, 2)
 #' f_true <- function(x) reg_fun[[1]](x[, 1]) + reg_fun[[2]](x[, 2])
 #' Y <- f_true(X) + rnorm(n)
-#' f_hat <- fit_additive(X=X, Y=Y, method = "llf_progression")
+#' f_hat <- fit_additive(X=X, Y=Y, method = "llf_progression", nb.iter = 5, q = .3 , plot = T)
 fit_additive <- function(X, Y,
                          nb.iter = 1,
                          method = 'llf_progression',
-                         q = .1,
+                         q = .2,
                          num.trees = 2000,
                          honesty = FALSE,
                          min.node.size = 25,
@@ -174,17 +174,23 @@ fit_additive <- function(X, Y,
         }
         graphics::plot(x1_grid, pred(f[[j0[1]]], as.matrix(x1_grid), pred.median = pred.median  )$predictions -
                           stats::median(predict.llf_progression(f[[j0[1]]], as.matrix(X[, j0[1]]), pred.median = pred.median )$predictions),
-                     ylab = 'f1(x1)' , xlab = 'x1', type="l", lty =2,
+                     ylab = paste0(
+                       'f',j0[1],'(x',j0[1],')') ,
+                       xlab = paste0('x',j0[1], '1'),
+                     type="l", lty =2,
                      ylim = ylim01,
-                     main = 'predictions f1')
+                     main = paste0('predictions f',j0[1]))
         if(!is.null(reg.fun)) graphics::lines(x1_grid, reg.fun[[j0[1]]](x1_grid))
         graphics::rug(X[,j0[1]], side = 1, col="black")
 
         graphics::plot(x2_grid, pred(f[[j0[2]]], as.matrix(x2_grid), pred.median =T)$predictions -
                           stats::median(predict.llf_progression(f[[j0[2]]], as.matrix(X[, j0[2]]), pred.median = T )$predictions),
-                     ylab = 'f2(x2)' , xlab = 'x2', col= "blue", type="l",lty =2,
-                     ylim = ylim02,
-                     main = 'predictions f2')
+                       ylab = paste0(
+                         'f',j0[2],'(x',j0[2],')') ,
+                       xlab = paste0('x',j0[2], '1'),
+                       type="l", lty =2, col = 'blue',
+                       ylim = ylim01,
+                       main = paste0('predictions f',j0[2]))
         if(!is.null(reg.fun))  graphics::lines(x2_grid, reg.fun[[j0[2]]](x2_grid), col=
                                                "blue")
         graphics::rug(X[,j0[2]], side = 1, col="blue")

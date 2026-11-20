@@ -7,6 +7,7 @@
 #' @param method A String containing either 'MLE' or 'proflik' to define how confidence intervals are computed for the conservative extrapolation implementation.
 #' @param cdf A function containing the cumulative distribution function of the data or 'NULL' if this should be computed by the method.
 #' @param Qf A function with the quantile function of the data or 'NULL' if this function should be computed by the method.
+#' @param p A small probability indicating the proportion of data considered as extremes in the tails.
 #'
 #' @return A list containing two functions:
 #'    * `cdf_func(x)` : The CDF function of the data taking values from \eqn{\mathbb{R}} to \eqn{(0,1)}.
@@ -16,7 +17,7 @@
 #' @examples
 #' set.seed(28)
 #' data <- rnorm(100)  # Generate some normal data
-#' functions <- prepare_semi_parametric_functions(data, method='proflik', fast=T)
+#' functions <- prepare_semi_parametric_functions(data, method='proflik', fast=T, p = 0.2)
 #' curve(functions$cdf(x), from = -4, to = 4, main = 'CDF')
 #' p <- functions$cdf(data)
 #' q <- functions$inverse_cdf(p)
@@ -27,11 +28,12 @@ prepare_semi_parametric_functions <-
            fast = TRUE,
            method = 'MLE',
            cdf = NULL,
-           Qf = NULL) {
-    p <- 0.5  ## fits upper and lower tails with GPD
+           Qf = NULL,
+           p = 0.5) { ## fits upper and lower tails with GPD
     lambda <- 0
     n <- length(data)
     sorted_data <- sort(data)
+
     lower_threshold <-
       stats::quantile(data, p)          # compute lower quantile
     upper_threshold <- stats::quantile(data, 1 - p)
@@ -170,9 +172,8 @@ prepare_semi_parametric_functions <-
         } else if (q > 1 - p) {
           # Upper tail inverse GPD
           q0   <-
-            sapply((1 - round((
-              1 - round(q, 14)
-            ) / p, 14)), function(k)
+            sapply((1 - round(
+              round(1 - q, 14) / p, 14)), function(k)
               min(k, 0.9994))
           #res <- function(q0) upper_threshold + evd::qgpd(q0, loc = 0, scale = upper_fit$param[1], shape = upper_fit$param[2])
 
@@ -285,20 +286,20 @@ prepare_semi_parametric_functions <-
 #' @examples
 #' set.seed(28)
 #' data <- rt(1000, df = 2)
-#' transformations <- prepare_laplace_transformations(data, p = 0.05)
+#' transformations <- prepare_laplace_transformations(data, p = 0.2)
 #' laplace_values <- transformations$data_to_laplace(data)
 #' reconstructed_data <- transformations$laplace_to_data(laplace_values)
 #' plot(data, laplace_values, main = "Data vs. Laplace Transformation")
 #' plot(reconstructed_data, laplace_values,  main = "Data Reconstruction vs. Laplace Transformation")
 
-prepare_laplace_transformations <- function(data, upper = NULL,  fast =TRUE, cdf = NULL, Qf = NULL ) { ## upper is the set of indices where the cdf should be computed
+prepare_laplace_transformations <- function(data, upper = NULL,  fast =TRUE, cdf = NULL, Qf = NULL, p = 0.2 ) { ## upper is the set of indices where the cdf should be computed
   # Fit the GPD and prepare the CDF and inverse CDF functions
   if (!is.null(upper)) {
-    functions_upper <- prepare_semi_parametric_functions(data[upper$upper], fast) ## fits semi parametric to data above q
-    functions_lower <- prepare_semi_parametric_functions(data[upper$lower],  fast) ## fits semi parametric to data below q
-    functions_mid   <- prepare_semi_parametric_functions(data[upper$mid],   fast) ## fits semi parametric to data inbetween
+    functions_upper <- prepare_semi_parametric_functions(data[upper$upper], fast=fast) ## fits semi parametric to data above the 1-pth quantile
+    functions_lower <- prepare_semi_parametric_functions(data[upper$lower],  fast=fast) ## fits semi parametric to data below the pth quantile
+    functions_mid   <- prepare_semi_parametric_functions(data[upper$mid],   fast=fast) ## fits semi parametric to data in between the upper and lower quantiles
   } else {
-    functions_upper <- prepare_semi_parametric_functions(data,  fast, cdf = cdf, Qf = Qf ) ## fits semi-parametric to all data
+    functions_upper <- prepare_semi_parametric_functions(data,  fast, cdf = cdf, Qf = Qf, p = p) ## fits semi-parametric to all data
     functions_lower <- functions_upper
     functions_mid   <- functions_upper
   }

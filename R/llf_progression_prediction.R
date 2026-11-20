@@ -234,7 +234,7 @@ predict.llf_progression <-
                 function(par, x, wx)
                   sum(wx * abs(Y_train_LP -  (1 - 2 * 1 / (
                     1 + exp(par[2])
-                  )) * (X_train_LP - x)  - par[1]) ^ 2)
+                  )) * (X_train_LP - x)  - par[1])^ 2)
               init     <-
                 sapply(1:n, function(k)
                   stats::optim(rep(0, (p + 1)), function(par)

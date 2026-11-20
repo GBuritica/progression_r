@@ -15,7 +15,7 @@
 #' @param q A probability taking values in \eqn{(0,1/2)}, indicating the probability of threshold exceedances. In this case, \eqn{q} percentage of the data is used for the GPD fit during marginal transformation. The default value is \eqn{q = 0.3}.
 #' @param num.trees An integer indicating the number of trees in the forest. Default is 2000.
 #' @param honesty A boolean of whether to use honest splitting or not. Default is FALSE.
-#' @param both.sided A boolean. Default value is `FALSE`, and currently this feature is only supported for a univariate predictor \eqn{X}. If `TRUE` then the marginal standarizations of \eqn{X} and \eqn{Y} are computed separately for upper data: \eqn{\{(X,Y) | X > median(X)\}} and lower data: \eqn{\{(X,Y) | X \leq median(X)\}}. The feature `both.sided = TRUE` is convenient when the upper and lower tails of \eqn{Y | X > median(X) } and \eqn{Y | X \leq median(X) } are not equivalent.
+#' @param both.sided A boolean. Default value is `TRUE`, and currently this feature is only supported for a univariate predictor \eqn{X}. If `TRUE` then the marginal standarizations of \eqn{X} and \eqn{Y} are computed separately for upper data: \eqn{\{(X,Y) | X > median(X)\}} and lower data: \eqn{\{(X,Y) | X \leq median(X)\}}. The feature `both.sided = TRUE` is convenient when the upper and lower tails of \eqn{Y | X > median(X) } and \eqn{Y | X \leq median(X) } are not equivalent.
 #' @param min.node.size An integer with the target for the minimum number of observation in each tree leaf. Default is 5.
 #' @param fast A boolean that when is set to false returns a conservative extrapolation. It computes a conservative response based on profile likelihood confidence intervals for the generalized Pareto distribution fit.
 #' @param FX A function with the cumulative distribution function (CDF) of the predictor X.
@@ -28,11 +28,13 @@
 #'
 #' @examples
 #' # Train a standard progression object
-#' n <- 50
+#' n <- 100
 #' p <- 2
 #' X <- matrix(rnorm(n * p), n, p)
 #' Y <- X[, 1] + rnorm(n)
-#' llf_progression_forest <- llf_progression(X, Y)
+#' plot(X[,1],Y)
+#' llf_progression_forest <- llf_progression(X, Y, both.sided = FALSE)
+#' res <- predict(llf_progression_forest,X)
 llf_progression <- function(X,
                             Y,
                             q = 0.1,
@@ -59,7 +61,7 @@ llf_progression <- function(X,
   low = NULL
   mid = NULL
   # probability level
-  q <- min( q, n^(0.7-1)) ## probability level
+  q <- min( q, 1-n^(0.7-1)) ## probability level
   if(!is.null(FX)) both.sided = FALSE
   if(p > 1){
     if(both.sided) warning('using both.sided = FALSE, as currently this option is only supported for a univariate covariate')
@@ -77,7 +79,7 @@ llf_progression <- function(X,
   }
 
   ## Laplace transformation applied separately on different low, bulk and high X values.
-  trans_X <- apply(X,2,function(k) prepare_laplace_transformations(data = k, upper=upper, fast = fast, cdf = FX, Qf = QX ))
+  trans_X <- apply(X,2,function(k) prepare_laplace_transformations(data = k, upper=upper, fast = T, cdf = FX, Qf = QX))
   trans_Y <- prepare_laplace_transformations(data = Y,  upper=upper, fast = fast, cdf = FY, Qf = QY )
 
   X_train_LP <- NULL
